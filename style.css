@@ -1,0 +1,715 @@
+*{
+    /* ekstra font-family, i tilfælde af manglende montserrat */
+    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-color:transparent;
+    text-decoration: none;
+}
+body{
+    background: #eee;
+    overflow-x:hidden;
+}
+.page{
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #171a1f;
+}
+.left{
+    width: 20vw;
+    height: 100vh;
+    background-color: #171a1f;
+    animation: nav-load-left 300ms ease-in-out;
+}
+@keyframes nav-load-left{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    padding: 30px;
+    /* background-image: linear-gradient(to top, hsl(218, 15%, 15%), hsl(356, 100%, 10%)); */
+    /* color:#d6d6d6; */
+}
+.logo h1{
+    color: transparent;
+    -webkit-text-stroke: 0.1px #d6d6d6;
+    background: url(img/back1.png);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+    /* font-size: 190px; */
+}
+.logo h3{
+    color: transparent;
+    -webkit-text-stroke: 0.1px #d6d6d6;
+    background: url(img/back1.png);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+    /* font-size: 190px; */
+}
+@keyframes back{
+    100%{
+        background-position: 250px 0;
+    }
+}
+.menu ul{
+    list-style:none;
+    text-align: right;
+    font-size: 1.25em;
+}
+.menu ul li{
+    position:relative;
+    display:inline-block;
+    width: 100%;
+    line-height: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0,1);
+}
+/* Udkast til løsning på hover transition fundet på stackoverflow.com */
+.menu ul li a{
+    color:#d6d6d6;
+    border-bottom: 1px solid #171a1f;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 18px 24px;
+    display:block;
+    width: 100%; height: 100%;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #1d0002 50%, #7a0108 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+}
+.menu ul li a:hover,
+.menu ul li a:focus{
+    background-position: 100% 0;
+}
+.fa-th{
+    margin-left: 6px;
+}
+.filter{
+    text-align: right;
+    text-decoration: none;
+    padding: 20px;    
+    background-image: linear-gradient(#1d0002, #1d0002);
+    color: #d6d6d6;
+    border-top: 1px solid #171a1f;
+    border-bottom: 1px solid #171a1f;
+}
+.filter h3{
+    margin-top: 15px;
+    font-size: 1.1em;
+    color:#1ab5b3;
+}
+.filter ul{
+    list-style:none;
+    margin-top: 20px;
+}
+.filter ul li{
+    text-decoration: none;
+    margin-top: 10px;
+    list-style:none;
+}
+
+.filter ul li a{
+    text-decoration: none;
+    color: #d6d6d6;
+    line-height: 30px;
+    font-size: 0.9em;
+    position: relative;
+}
+.filter ul li a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left:50%;
+    transform: translateX(-50%);
+    background: #1ab5b3;
+    transition: width 0.3s;
+}
+.filter ul li a:hover::after{
+    width: 50%;
+}
+/* .filter a:hover,
+.filter a:focus{
+    text-decoration: underline;
+    color: #1ab5b3;
+    font-size: 1em; */
+/* }
+.filter a:visited{
+    text-decoration: none;
+    color: #d6d6d6;
+} */
+/* .filter a:visited:hover{
+    text-decoration: underline;
+    color: #1ab5b3;
+    font-size: 1.1em;
+} */
+
+/* Guide: "How To Create Social Media Buttons Hover Effect Only HTML and CSS." - Rifars  */
+.logoer{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-image: linear-gradient(#1d0002, #171a1f);
+    align-items: center;
+}
+.logoer ul li{
+    display:inline-block;
+    width: 70px;
+    height: 70px;
+    background: #d6d6d6;
+    margin: auto 10px;
+    /* box-shadow: 3px 3px 10px #aeaeae, -4px -4px 10px white; */
+    text-align: center;
+    line-height: 75px;
+    font-size: 40px;
+    color: #333;
+    transition:0.5s;
+    border-radius: 25px;
+    margin-top: 10px;
+    padding: auto;
+    vertical-align: center;
+}
+#fb:hover{
+    color: #eee;
+    border-radius: 50%;
+    background: blue;
+}
+#youtube:hover{
+    color: #eee;
+    border-radius: 50%;
+    background-color: red;
+}
+#twitter:hover{
+    color: #eee;
+    border-radius: 50%;
+    background-color: royalblue;
+}
+#instagram:hover{
+    color: #eee;
+    border-radius: 50%;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.logoer h5{
+    display:flex;
+    justify-content: center;
+    margin-top: 30px;
+    color:#d6d6d6;
+}
+
+.right{
+    width: 80vw;
+    animation: nav-load-right 300ms ease-in-out;
+}
+@keyframes nav-load-right{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.right-flow-1{
+    animation: nav-load-right 300ms ease-in-out;
+}
+@keyframes nav-load-right{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.right-about{
+    animation: nav-load-right 300ms ease-in-out;
+}
+@keyframes nav-load-right{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.right-projects{
+    animation: nav-load-right 300ms ease-in-out;
+}
+@keyframes nav-load-right{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.right section{
+    display:inline-flex;
+    list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.right img{
+    width: 378px;
+    height: 378px;
+    object-fit: cover;
+}
+
+.contact-form{
+    border-radius: 5px;
+    background: white;
+    padding: 50px;
+    width: 60%;
+    font-size: 1.1em;
+}
+.contact-form input[type=text], select, textarea{
+    width: 100%;
+    font-size: 1.1em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 48.5px;
+    resize: vertical;
+}
+.contact-form input[type=email], select, textarea{
+    width: 100%;
+    font-size: 1.1em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 48.5px;
+    resize: vertical;
+}
+.contact-form input[type=submit]{
+    display: block;
+    margin: 0 auto;
+    font-size: 2em;
+    background: #1d0002;
+    color: white;
+    padding: 12px 20px;
+    border:none;
+    border-radius: 4px;
+    cursor:pointer;
+}
+.contact-form input[type=submit]:hover{
+    background:#7a0108;
+}
+#fname{
+    height: 20%;
+}
+#lname{
+    height: 20%;
+}
+#country{
+    height: 20%;
+}
+#emne{
+    height: 20%;
+}
+#besked{
+    height: 80%;
+}
+.right iframe{
+    position: absolute;
+    right: 0%;
+    top:0%;
+    height: 100vh;
+    width: 612px;
+}
+.right-about{
+    padding: 50px;
+    background-color: #d6d6d6;
+    /* border: 25px solid hsl(0, 30%, 10%); */
+    width: 80vw;
+    
+}
+.right-about p{
+    margin-top: 25px;
+    writing-mode: horizontal-tb;
+    width: 50%;
+}
+.right-about div img{
+    background-color: #d6d6d6;
+    position: absolute; 
+    top: 80px;
+    right: 85px;
+    height: 400px;
+    width: 400px;
+}
+
+.right-about-cv{
+    margin-right: 150px;
+    margin-bottom: 30px;
+    position: absolute;
+    top:55%;
+    right:3%;
+    
+}
+.right-about-cv h3{
+    font-size: 1.3em;
+    display:inline-block;
+}
+.right-about-cv h4{
+    font-size: 1.3em;
+}
+
+.right-about-cv a{
+    font-size: 1.5em;
+}
+.right-about-cv-cv{
+    position: absolute;
+    top: 56%;
+}
+.right-about-video-cv{
+    position: absolute;
+    top:60%;
+    right: 0;
+    left: 71%;
+}
+
+.right-about-video-cv iframe{
+    width: 500px;
+    height: 300px;
+}
+
+.right-about section h1{
+    font-size: 2em;
+}
+.right-about section ul{
+    margin-top: 55px;
+    font-size: 1.1em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 750px;
+}
+.right-about section ul li{
+    margin-top: 15px;
+}
+.right-about section ul h3{
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* "Build and deploy a portfolio website [Full Tutorial Course]" - FreeCodeCamp.org (YouTube) */
+.right-projects{
+    width: 78.8%;
+    color: #d6d6d6;
+    text-align: center;
+}
+.section-title-projects{
+    margin-top: 40px;
+    font-size: 2em;
+}
+.section-subtitle-projects{
+    color: #d6d6d6;
+    font-size: 1.2em;
+    margin-bottom: 2.21em;
+}
+.projects{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.projects-item{
+    background-color: #171a1f;
+    overflow: hidden;
+}
+.projects-images{
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+}
+.projects-item:focus{
+    position: relative;
+    z-index: 2;
+}
+.projects-images:hover,
+.projects-item:focus .projects-images{
+    transform: scale(1.2);
+    opacity: .75;
+}
+#flow-1{
+    box-sizing: border-box;
+    height: 400px;
+    width: 400px;
+}
+.right-flow-1{
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-left: 15%;
+}
+.right-flow-1 h2{
+    display:flex;
+    justify-content: space-evenly;
+    color: #d6d6d6;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.right-flow-1 img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 880px;
+    margin-bottom: 60px;
+}
+
+/* "Image Hover Text Overlay Effect with HTML & CSS - Web Design Tutorial" - dcode (YouTube) */
+.image__img{
+    position: absolute;
+    width: 400px;
+}
+.image__img{
+    display: block;
+    width: 100%;
+}
+.image__overlay{
+    position: relative;
+    top:0;
+    left:0;
+    width: 378px;
+    height: 378px;
+    background: rgba(0, 0, 0, 0.6);
+    color:#d6d6d6;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    text-decoration: none;
+}
+.front-page a{
+    text-decoration: none;
+}
+.image__overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+    text-decoration: none;
+}
+.image__overlay > *{
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+.image__overlay:hover > *{
+    transform: translateY(0);
+}
+.image__title{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.image__description{
+    font-size: 1.25em;
+    margin-top:0.25em;
+}
+
+
+/* "Create custom scrollbars using CSS" - Kevin Powell (YouTube) */
+::-webkit-scrollbar{
+    width: 17px;
+}
+::-webkit-scrollbar-track{
+    background: #1d0002;
+}
+::-webkit-scrollbar-thumb{
+    background: #7a0108;
+    border: .25em solid #1d0002;
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #1ab5b3;
+}
+
+#topbtn{
+    position: fixed;
+    bottom: 1%;
+    left: 0.5%;
+    border: none;
+    outline: none;
+    background: #1d0002;
+    color: #d6d6d6;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+}
+#topbtn:hover{
+    background: #7a0108;
+}
+.tabel{
+    margin-top: 50px;
+}
+.content-table{
+    background-color: #1d0002;
+    margin: 25px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;  
+    border-radius: 5px 5px 0 0; 
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.content-table thead tr{
+    background-color: #7a0108;
+    color: #d6d6d6;
+    font-weight: bold;
+}
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #1ab5b3;
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: hsl(356, 100%, 12%);
+}
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #1ab5b3;
+}
+
+.dropdown{
+    background: #1d0002;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 15%;
+}
+.dropdown ul{
+    display: inline-flex;
+    list-style: none;
+    color:#d6d6d6
+}
+.dropdown ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+.dropdown ul li a{
+    text-decoration: none;
+    color:#d6d6d6;
+}
+.dropdown-active, .dropdown ul li:hover{
+    background: #7a0108;
+    border-radius: 3px;
+}
+.sub-menu-1{
+    display:none;
+}
+.dropdown ul li:hover .sub-menu-1{
+    display:block;
+    position: absolute;
+    background: hsl(357, 98%, 15%);
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.dropdown ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.dropdown ul li:hover .sub-menu-1 ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #d6d6d6;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+.dropdown ul li:hover .sub-menu-1 ul li:last-child{
+    border-bottom: none;
+}
+.dropdown ul li:hover .sub-menu-1 ul li a:hover{
+    color: #1ab5b3;
+}
+
+
+.loginbox{
+    width: 320px;
+    height: 550px;
+    background: #1d0002;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    margin-left: 50%;
+    margin-top: 8%;
+    padding: 70px 30px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top:-8%;
+}
+.loginbox h1{
+    margin:0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.loginbox p{
+    margin:5px 0;
+    padding:0;
+    font-weight: bold;
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline:none;
+    height: 40px;;
+    color:#fff;
+    font-size:16px;
+}
+.loginbox input[type="submit"]{
+    border:none;
+    outline:none;
+    height: 40px;
+    background: #fb2525;
+    color:#fff;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.loginbox input[type="submit"]:hover{
+    cursor: pointer;
+    background:#1ab5b3;
+    color:#000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color:darkgrey;
+}
+.loginbox a:hover{
+    color:#1ab5b3;
+}

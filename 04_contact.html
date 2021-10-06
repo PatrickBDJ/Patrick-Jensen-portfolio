@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- fontawesome.com brugt til logoer -->
+    <script src="https://kit.fontawesome.com/86262658d0.js" crossorigin="anonymous"></script>
+    <title>Kontakt</title>
+</head>
+<body>
+<div class="page">
+    <div class="left">
+        <div class="logo">
+            <h1>Patrick Jensen</h1>
+            <h3>Multimediedesign</h3>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="01_frontpage.html"><span>Hjem</span></a></li>
+                <li><a href="02_about.html">Om</a></li>
+                <li><a href="03_projects.html">Eksperimentering</a></li>
+                <li><a href="04_contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="filter">
+            <h3>Filter <i class="fas fa-th"></i></h3>
+            
+            <nav>
+            <ul>
+                <li><a href="#">Alle</a></li>
+                <li><a href="#">Websider</a></li>
+                <li><a href="#">Fotoredigering</a></li>
+                <li><a href="#">Illustrationer</a></li>
+                <li><a href="#">Logoer</a></li>
+            </ul>
+            </nav>
+        </div>
+        <div class="logoer">
+            <!-- sociale medier -->
+            <footer>
+            <ul>
+                <a href="https://www.facebook.com/" target="_blank"><li  id="fb"><i class="fab fa-facebook-f"></i></li> </a>
+                <a href="https://www.youtube.com/" target="_blank"><li id="youtube"><i class="fab fa-youtube"></i></li></a>
+                <a href="https://twitter.com/" target="_blank"><li id="twitter"><i class="fab fa-twitter"></i></li></a>
+                <a href="https://www.instagram.com/" target="_blank"><li id="instagram"><i class="fab fa-instagram"></i></li></a>
+                <h5>&copy; 2021</h5>
+            </footer>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Right -->
+    <div class="right">
+        <div class="contact-form">
+            <form action="action_page.php"  target="_blank">
+                <label for="fname">Navn:</label>
+                <input type="text" id="fname" name="fornavn" placeholder="Dit navn">
+
+                <label for="lname">Email:</label>
+                <input type="email" id="lname" name="efternavn" placeholder="Din email">
+
+                <label for="country">Land:</label>
+                <select name="country" id="country">
+                    <option value="danmark">Danmark</option>
+                    <option value="sverige">Sverige</option>
+                    <option value="norge">Norge</option>
+                </select>
+
+                <label for="emne">Emne:</label>
+                <input type="text" name="emne" id="emne" placeholder="Emne">
+
+                <textarea name="besked" id="besked" placeholder="Skriv besked" cols="27" rows="8" maxlength="500" style="resize: none;"></textarea>
+
+                <input type="submit" value="Send">
+            </form>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.3048898167876!2d12.509708616089192!3d55.77057639808825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46524e6d778cb02b%3A0x7e3ab7668df86d7c!2sCphbusiness%20Lyngby!5e0!3m2!1sda!2sdk!4v1633009495737!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+</body>
+</html>
